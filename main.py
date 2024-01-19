@@ -3,7 +3,7 @@ from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 from instabot import Bot
 import time
 
-bot = telebot.TeleBot("6749440736:AAECRPuP6GOYRlFoi7Fyo9JMI3KvHDZVpsQ", parse_mode=None)
+bot = telebot.TeleBot("6749440736:AAGw3z83kQ2yZEYnjwotgSFVA7SuvQyHS28", parse_mode=None)
 
 
 @bot.message_handler(commands=['start', 'help'])
@@ -31,7 +31,6 @@ What's your username?
 """)
     bot.register_next_step_handler(msg, process_name_step)
 
-
 def process_name_step(message):
     chat_id = message.chat.id
     name = message.text
@@ -40,7 +39,6 @@ def process_name_step(message):
     msg = bot.reply_to(message, 'How old are you?')
 
     bot.register_next_step_handler(msg, process_password_step)
-
 
 def process_password_step(message):
     chat_id = message.chat.id
